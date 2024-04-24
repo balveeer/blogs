@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {useSelector} from "react-redux"
+import { useSelector } from "react-redux";
 
 function AuthLayout({ children, authentication = true }) {
   const navigate = useNavigate();
