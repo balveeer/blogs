@@ -15,7 +15,7 @@ function Post() {
   const userData = useSelector((state) => state.auth.userData);
 
   useEffect(() => {
-    if (userData && post && post?.userId == userData?.userData.$id) {
+    if (userData && post && post?.userId == userData?.userData?.$id) {
       setIsAuthor(true);
     }
   }, [userData, post]);
