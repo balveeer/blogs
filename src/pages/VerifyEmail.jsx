@@ -12,25 +12,28 @@ function VerifyEmail() {
   const secret = urlParams.get("secret");
   const userId = urlParams.get("userId");
   useEffect(() => {
-    if (userData) setVerified(userData.userData.emailVerification);
+    if (userData) setVerified(userData?.userData?.emailVerification);
     if (secret && userId) {
       authService.updateEmailverification({ userId, secret });
       setVerified(true);
     }
   }, [userData]);
+  
   const createVerification = () => {
-    authService.emailverification();
+    authService.emailVerification();
   };
 
   if (!verified)
     return (
       <Container>
         <div className="w-full min-h-96 flex flex-col gap-4 justify-center items-center">
-          <h2 className="text-3xl text-green-600 p-4">
-            Verification Mail Sent Successfully Check Inbox.
+          <h2 className="text-2xl text-blue-600 font-semibold p-4">
+            Verification Mail Sent Successfully, Check Your Inbox.
           </h2>
-          <h2 className="text-2xl text-gray-600 p-4">Didn't get Mail?</h2>
-          <Button onClick={createVerification}>Try Again</Button>
+          <div>
+          <span className="text-xl p-4 inline">Didn't get the verification Mail?</span>
+          <Button className="rounded-xl bg-transparent text-blue-600 border-blue-600 border-2 font-semibold p-2 px-4 hover:text-white hover:bg-blue-600 hover:rounded-lg hover:shadow-none shadow-md shadow-blue-600 duration-200" onClick={createVerification}>Send Email again</Button>
+          </div>
         </div>
       </Container>
     );

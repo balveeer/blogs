@@ -54,7 +54,7 @@ export class AuthService {
             console.log("Appwrite service :: logout :: error", error);
         }
     }
-    async emailverification() {
+    async emailVerification() {
         try {
             const verification = await this.account.createVerification('https://bloggling.netlify.app/verify-email');
             console.log("createEmail",verification)

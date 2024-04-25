@@ -21,11 +21,11 @@ function Signup() {
       if (userData) {
         const userData = await authService.getCurrentUser();
         if (userData) dispatch(login(userData));
-        authService.emailverification();
+        authService.emailVerification();
         navigate("/verify-email");
       }
     } catch (error) {
-      console.log(error);
+      setLoad(false)
       setError(error.message);
     }
   };
