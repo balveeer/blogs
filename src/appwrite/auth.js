@@ -56,7 +56,7 @@ export class AuthService {
     }
     async emailverification() {
         try {
-            const verification = await this.account.createVerification('http://localhost:5173/verify-email');
+            const verification = await this.account.createVerification('https://bloggling.netlify.app/verify-email');
             console.log("createEmail",verification)
         return verification;
             
