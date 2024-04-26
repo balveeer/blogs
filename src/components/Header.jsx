@@ -64,7 +64,7 @@ function Header() {
         </nav>
       </header>
       <div className="w-full h-0 md:h-20"></div>
-      <ul className="flex justify-around ml-auto pt-20 md:hidden">
+      <ul className="flex justify-around w-full ml-auto pt-20 md:hidden">
         {navItems.map((item) =>
           item.active ? (
             <li key={item.name}>

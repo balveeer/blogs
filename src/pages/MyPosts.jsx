@@ -15,12 +15,14 @@ function MyPosts() {
       .then((posts) => {
         if (posts) {
           setPosts(posts.documents);
+          console.log(posts.documents);
         }
       })
       .catch((error) => console.log(error));
   }, []);
   return (
     <div className="w-full py-4">
+        {posts.length>0 ?
       <Container>
         <h2 className="text-3xl t-12 p-3 font-bold text-teal-900">My Posts </h2>
         <div className="flex flex-wrap box-border gap-6">
@@ -33,7 +35,11 @@ function MyPosts() {
             </div>
           ))}
         </div>
-      </Container>
+      </Container>:(
+      <Container>
+        
+        <h2 className="text-3xl t-12 p-3 font-bold text-teal-900">You haven't posted anything. </h2>
+      </Container>)}
     </div>
   );
 }

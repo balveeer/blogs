@@ -62,24 +62,24 @@ function Post() {
               <Link to={`/edit-post/${post.$id}`}>
                 <Button
                   bgColor="bg-green-500 hover:bg-green-600 font-semibold"
-                  className="py-2 px-4  rounded-l "
+                  className="py-2 px-4  rounded-l"
                 >
                   Edit Post
                 </Button>
               </Link>
               <Button
                 onClick={deletePost}
-                bgColor="bg-red-500 hover:bg-red-600  font-semibold"
+                bgColor="bg-red-500 hover:bg-red-600 font-semibold"
                 className="py-2 px-4  rounded-r border-l border-l-white/80"
               >
                 {load ? (
-                  <span className="animate-[spin_1.5s_ease-in-out_infinite] m-2  px-6 overflow-hidden text-white inline-block">
+                  <span className="animate-[spin_1s_ease-in-out_infinite] px-6 text-white inline-block">
                     <svg
                       className="animate-spin"
                       width="20"
                       stroke="white"
                       fill="white"
-                      height="24"
+                      height="20"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -99,10 +99,9 @@ function Post() {
           className={`px-4 flex justify-center gap-x-4 max-w-fit text-center rounded-full bg-teal-400 mt-4`}
         >
           <h2
-            onClick={authorPosts}
             className="text-xl font-semibold text-gray-800"
           >
-            👤by- <span className="first-letter:capitalize hover:underline cursor-pointer">{post.author}</span>
+            👤by- {post.author?(<span onClick={authorPosts} className="first-letter:capitalize hover:underline cursor-pointer">{post.author}</span>):"Unknown"}
           </h2>
           <h2 className="text-xl font-semibold text-gray-800">📆at- {date}</h2>
         </div>
