@@ -4,19 +4,19 @@ import { Logo } from "./index";
 
 function Footer() {
   return (
-    <section className="overflow-hidden py-10 bg-teal-400 border border-t-2 border-t-teal-600">
+    <section className="overflow-hidden bg-teal-400 border border-t-2 border-t-teal-600">
       <div className=" z-10 mx-auto max-w-7xl px-4">
         <div className=" flex flex-wrap justify-center">
-          <div className="mb-4 w-full flex justify-center items-center">
+          <div className="w-full flex justify-center items-center">
             <Logo width="w-48" />
           </div>
         </div>
       </div>
       <div className="p-4 flex items-center justify-center">
         <div className="flex mt-4 justify-center gap-2">
-          <a href="#" className="text-gray-800 p-2 rounded hover:bg-teal-300 hover:text-blue-600">
+          <a href="#" className="text-gray-800 p-2 rounded hover:bg-teal-300 hover:text-indigo-500">
             <svg
-              className="w-4 h-4 "
+              className="w-4 h-4"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -42,7 +42,7 @@ function Footer() {
             </svg>
             <span className="sr-only">Twitter page</span>
           </a>
-          <a href="#" className="text-gray-800 p-2 rounded hover:bg-teal-300 hover:text-gray-900">
+          <a href="https://github.com/balveeer" target="_blank" className="text-gray-800 p-2 rounded hover:bg-teal-300 hover:text-gray-900">
             <svg
               className="w-4 h-4 "
               aria-hidden="true"
@@ -58,7 +58,9 @@ function Footer() {
             </svg>
             <span className="sr-only">GitHub account</span>
           </a>
-          <a href="#" className="text-gray-800 p-2 rounded hover:bg-teal-300 hover:fill-sky-700">
+          <a 
+          // href="https://www.linkedin.com/in/balveer-singh-b1486224a/"
+           href="#" className="text-gray-800 p-2 rounded hover:bg-teal-300 hover:fill-sky-700">
             <svg
               className="w-4 h-4 "
               xmlns="http://www.w3.org/2000/svg"

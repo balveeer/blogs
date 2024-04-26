@@ -27,7 +27,7 @@ const router = createBrowserRouter(
           <Route path="edit-post/:slug" element={<AuthLayout authentication><EditPost /></AuthLayout>} />
           <Route path="post/:slug" element={<Post />} />
           <Route path="verify-email" element={<VerifyEmail />} />
-          <Route path="not-found" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
           <Route path="author/:slug" element={<Author />} />
         </Route>
       )

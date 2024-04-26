@@ -47,7 +47,7 @@ function Home() {
                 <h2 className='text-3xl p-4 font-bold text-teal-900'>Recent Posts</h2>
                 <div className="flex flex-wrap box-border gap-6">
                     {posts.map((post)=>
-                        <div key={post.$id} className="p-4 md:w-5/12 lg:w-3/12 bg-gradient-to-b from-emerald-400 to-teal-500 rounded-lg group hover:scale-105 duration-200 shadow-teal-600 shadow-lg">
+                        <div key={post.$id} className="p-4 md:w-5/12 lg:w-3/12 bg-gradient-to-b from-emerald-400 to-teal-500 rounded-lg group hover:scale-105 duration-200 shadow-teal-600 shadow-lg hover:shadow-none border-2 border-teal-500">
                             <PostCard {...post} />
                         </div>
                     )}

@@ -23,9 +23,9 @@ function Author() {
     <div className="w-full py-4">
       <Container>
         <h2 className="text-3xl t-12 p-3 font-bold text-teal-900 ">
-          {posts[0]?.author}'s Posts{" "}
+          {posts[0] && posts[0]?.author +"'s Posts"}
         </h2>
-        <div className="flex flex-wrap justify-start items-stretch gap-4">
+        <div className="flex flex-wrap box-border gap-6">
           {posts.map((post) => (
             <div
               key={post?.$id}

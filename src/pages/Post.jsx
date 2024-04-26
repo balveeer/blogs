@@ -52,25 +52,13 @@ function Post() {
   return post ? (
     <div className="py-8 mt-5">
       <Container>
-        <h1 className={` p-8 text-3xl font-bold inline pl-4 flex-nowrap`}>
+        <div className="flex w-full justify-between items-center">
+        <h1 className={`${ isAuthor && "w-2/3 lg:w-full" }p-8 text-3xl font-bold inline pl-4 flex-nowrap first-letter:capitalize`}>
           {post.title}
         </h1>
-        <div
-          className={`${
-            isAuthor ? "w-2/3" : "w-full"
-          } px-4 flex justify-center gap-x-4 max-w-fit text-center rounded-full bg-teal-400 mt-4`}
-        >
-          <h2
-            onClick={authorPosts}
-            className="text-xl font-semibold text-gray-800 hover:underline cursor-pointer"
-          >
-            👤by- {post.author}
-          </h2>
-          <h2 className="text-xl font-semibold text-gray-800">📆at- {date}</h2>
-        </div>
-        <div className="w-full mb-6 flex justify-between">
+        <div className="w-full mb-6 flex justify-center items-center">
           {isAuthor && (
-            <div className="w-1/3 z-20 inline-flex flex-wrap">
+            <div className="w-1/3 h-full z-20 inline-flex flex-nowrap justify-center items-center">
               <Link to={`/edit-post/${post.$id}`}>
                 <Button
                   bgColor="bg-green-500 hover:bg-green-600 font-semibold"
@@ -105,6 +93,19 @@ function Post() {
             </div>
           )}
         </div>
+
+        </div>
+        <div
+          className={`px-4 flex justify-center gap-x-4 max-w-fit text-center rounded-full bg-teal-400 mt-4`}
+        >
+          <h2
+            onClick={authorPosts}
+            className="text-xl font-semibold text-gray-800"
+          >
+            👤by- <span className="first-letter:capitalize hover:underline cursor-pointer">{post.author}</span>
+          </h2>
+          <h2 className="text-xl font-semibold text-gray-800">📆at- {date}</h2>
+        </div>
         <div className="flex flex-col md:flex-row-reverse">
           <div className="w-full md:w-1/2 max-w-3xl justify-center mb-4 rounded-xl p-2">
             <img
@@ -113,7 +114,7 @@ function Post() {
               className="rounded-xl"
             />
           </div>
-          <div className="md:w-1/2">{parse(post.content)}</div>
+          <div className="md:w-1/2 text-lg first-letter:capitalize first-letter:mr-2 first-letter:float-left first-letter:text-5xl first-letter:text-gray-500 first-letter:font-bold ">{parse(post.content)}</div>
         </div>
       </Container>
     </div>

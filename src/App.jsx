@@ -23,10 +23,9 @@ function App() {
   return loading ? (
     <div className="min-h-screen w-full text-3xl bg-teal-800">loading...</div>
   ) : (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      {/* <div className="w-full h-12"></div> */}
-      <main>
+      <main className="flex-grow">
         <Outlet />
       </main>
       <Footer />

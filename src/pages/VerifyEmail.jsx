@@ -12,13 +12,12 @@ function VerifyEmail() {
   const secret = urlParams.get("secret");
   const userId = urlParams.get("userId");
   useEffect(() => {
-    console.log(userData?.userData?.emailVerification)
     if (userData) setVerified(userData?.userData?.emailVerification);
     if (secret && userId) {
       authService.updateEmailverification({ userId, secret });
       setVerified(true);
     }
-  }, [userData,userData?.userData]);
+  }, [userData]);
   
   const createVerification = () => {
     authService.emailVerification();
@@ -33,7 +32,7 @@ function VerifyEmail() {
           </h2>
           <div>
           <span className="text-xl p-4 inline">Didn't get the verification Mail?</span>
-          <Button className="rounded-xl bg-transparent  border-blue-600 border-2 font-semibold p-2 px-4 text-blue-600 hover:text-white hover:bg-blue-600 hover:rounded-lg hover:shadow-none shadow-md shadow-blue-600 duration-200" onClick={createVerification}>Send Email again</Button>
+          <Button className="rounded-xl bg-transparent  border-blue-600 border-2 font-semibold p-2 px-4 hover:text-white hover:bg-blue-600 hover:rounded-lg hover:shadow-none shadow-md shadow-blue-600 duration-200" textColor="text-blue-600" onClick={createVerification}>Send Email again</Button>
           </div>
         </div>
       </Container>
